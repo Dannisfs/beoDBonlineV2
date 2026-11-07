@@ -132,13 +132,13 @@ namespace RWS
    {
       RWS_FUNCTION("RWS::CEventId::~CEventId");
 
-      if (m_linked_count > 0)
+      if (m_linked_count > 0 && pEventId != 0)
           DBO_WARNING_MESSAGE("CEventId::~CEventId " << RWS_VALIDSTRING(pEventId->p_msgname) << " not unlinked");
 
-      if (m_registered_count > 0)
+      if (m_registered_count > 0 && pEventId != 0)
           DBO_WARNING_MESSAGE("CEventId::~CEventId " << RWS_VALIDSTRING(pEventId->p_msgname) << " not unregistered");
 
-      if (pEventId > 0)
+      if (pEventId != 0)
           DBO_WARNING_MESSAGE("CEventId::~CEventId " << RWS_VALIDSTRING(pEventId->p_msgname) << " not unregistered (This should never happen).");
 
       RWS_RETURNVOID();
@@ -552,7 +552,7 @@ namespace RWS
                //
                CRegisteredMsgs *pRMsg = Id;
 
-			   // Çü¼®
+			   // Ã‡Ã¼Â¼Â®
                // pRMsg->p_format = static_cast<char *>(::RWS_OP_NEW( strlen (p_formatstring) + 1));
 			   RwInt32 iLen = (RwInt32)strlen (p_formatstring) + 1;
 			   pRMsg->p_format = static_cast<char *>(NTL_NEW char[iLen]);
@@ -612,7 +612,7 @@ namespace RWS
                   // Previously registered with no format string, redefine using this format string
                   // from then on it must match.
                   //
-				  // Çü¼®
+				  // Ã‡Ã¼Â¼Â®
                   // pRMsg->p_format = static_cast<char *>(::RWS_OP_NEW( strlen (p_formatstring) + 1));
 				  RwInt32 iLen = (RwInt32)strlen (p_formatstring) + 1;
 				  pRMsg->p_format = static_cast<char *>(NTL_NEW char[iLen]);
@@ -677,7 +677,7 @@ namespace RWS
       //
       // Note: "ABC" returns 3 0 terminate requires "ABC" + 0
       //
-	  // Çü¼®
+	  // Ã‡Ã¼Â¼Â®
       // pRMsg->p_msgname = static_cast<char *>(::RWS_OP_NEW( strlen (p_msgname) + 1));
 	  RwInt32 iLen = (RwInt32)strlen (p_msgname) + 1;
 	  pRMsg->p_msgname = static_cast<char *>(NTL_NEW char [iLen]);
@@ -690,7 +690,7 @@ namespace RWS
    
       if (p_formatstring)
       {
-		  // Çü¼®
+		  // Ã‡Ã¼Â¼Â®
           // pRMsg->p_format = static_cast<char *>(::RWS_OP_NEW( strlen (p_formatstring) + 1));
 		  RwInt32 iLen = (RwInt32)strlen (p_formatstring) + 1;
 		  pRMsg->p_format = static_cast<char *>(NTL_NEW char[strlen (p_formatstring) + 1]);
@@ -791,12 +791,12 @@ namespace RWS
             // Free the memory associated with the name string
             //
 			RWS_ARRAY_DELETE(pRMsg->p_msgname);
-			// Çü¼®
+			// Ã‡Ã¼Â¼Â®
 			// operator delete (pRMsg->p_msgname);
             pRMsg->p_msgname = 0;
    
             // Free the memory associated with the format string
-            // Çü¼®
+            // Ã‡Ã¼Â¼Â®
             // operator delete (pRMsg->p_format);
 			RWS_ARRAY_DELETE(pRMsg->p_format);
             pRMsg->p_format = 0;
