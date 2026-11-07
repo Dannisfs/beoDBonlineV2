@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <GFXSDK_DIR>D:\000DBO\OpenDBO\thirdparty\GFx SDK 3.3</GFXSDK_DIR>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:offsetof- /D_HAS_AUTO_PTR_ETC=1 /D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS /wd4828</AdditionalOptions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>
