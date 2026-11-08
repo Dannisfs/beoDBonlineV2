@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <GFXSDK_DIR>D:\000DBO\OpenDBO\thirdparty\GFx SDK 3.3</GFXSDK_DIR>
+    <DXSDK_DIR>D:\000DBO\OpenDBO\thirdparty\DXSDK\</DXSDK_DIR>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
